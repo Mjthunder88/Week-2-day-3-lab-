@@ -39,7 +39,7 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 
 // CODE HERE 
 let first = (arr, callback) => {
-  callback(arr)
+  callback(arr[0])
 }
 
 // UNCOMMENT THE FUNCTION CALL BELOW
@@ -150,7 +150,7 @@ uniq(names, uniqArr  => {
 // CODE HERE 
 let each = (arr, callback) => {
   arr.forEach((element, i ) => {
-    callback(element, i)
+    callback(element, i)  
 }
 )
 }
@@ -234,7 +234,11 @@ getUserById(users, '16t', user => {
 */
 
 // CODE HERE
-
+const addingFactory = (num) => {
+    return function innerFn (num2) {
+        return num + num2;
+    }
+}
 /*
   Now that you have addingFactory, you can create other
   functions from it. 
@@ -248,7 +252,10 @@ getUserById(users, '16t', user => {
 */
 
 // CODE HERE
-
+ let result = addingFactory();
+//  console.log(result)
+ let addTen = addingFactory(10)
+//  console.log(addTen)
 /*
   Now the inner function is stored in the addTen variable! 
 
@@ -260,6 +267,8 @@ getUserById(users, '16t', user => {
 */
 
 // CODE HERE
+console.log(addTen(10))
+console.log(addTen(25))
 
 /*
   Let's make another function from the addingFactory. 
@@ -273,3 +282,7 @@ getUserById(users, '16t', user => {
 */
 
 // CODE HERE
+
+let eightyEight = addingFactory(88);
+
+console.log(eightyEight(10));
